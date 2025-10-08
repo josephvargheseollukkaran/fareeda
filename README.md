@@ -1,0 +1,2 @@
+# fareeda
+gold rate
