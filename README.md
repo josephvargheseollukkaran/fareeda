@@ -1,2 +1,1 @@
-# fareeda
-gold rate
+# josephvargheseollukkaran.github.io
