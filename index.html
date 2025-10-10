@@ -1,153 +1,123 @@
 <!DOCTYPE html>
-<html lang="en-US">
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Joseph Varghese</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="images/joseph.jpg">
-    <link rel="icon" type="image/png" sizes="32x32" href="images/joseph.jpg">
-    <link rel="icon" type="image/png" sizes="16x16" href="images/joseph.jpg">
-    <link rel="manifest" href="images/site.webmanifest">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
-    <link href="css/aos.css?ver=1.1.0" rel="stylesheet">
-    <link href="css/bootstrap.min.css?ver=1.1.0" rel="stylesheet">
-    <link href="css/main.css?ver=1.1.0" rel="stylesheet">
-    <noscript>
-      <style type="text/css">
-        [data-aos] {
-            opacity: 1 !important;
-            transform: translate(0) scale(1) !important;
-        }
-      </style>
-      
-    </noscript>
-  </head>
-  <body id="top">
-    
-    <div className="min-h-screen bg-gradient-to-br from-amber-100 via-yellow-50 to-amber-200 flex items-center justify-center p-4">
-      <div className="w-full max-w-6xl">
-        <div className="text-center mb-8">
-          <div className="flex justify-center items-center gap-3 mb-4">
-            <Sparkles className="w-12 h-12 text-red-600" />
-          </div>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <title>Fareeda Jewellery - Gold Rates</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Georgia', serif;
+      background: url('background.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #000;
+      text-align: center;
+    }
 
-          <h1 className="text-6xl font-bold mb-2 tracking-wider" style={{
-            color: '#DC2626',
-            textShadow: '3px 3px 0px #FCD34D, 6px 6px 0px rgba(0,0,0,0.1)',
-            WebkitTextStroke: '2px #92400E'
-          }}>
-            FAREEDA
-          </h1>
-          <p className="text-2xl font-semibold tracking-[0.3em] text-gray-800 mb-6">JEWELLERY</p>
+    .container {
+      background-color: rgba(255, 255, 255, 0.85);
+      width: 80%;
+      margin: 30px auto;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
 
-          <div className="bg-gray-900 text-white py-3 px-8 inline-block rounded-sm shadow-lg">
-            <p className="text-2xl font-bold tracking-wide">DATE: {currentDate}</p>
-          </div>
-        </div>
+    .logo {
+      text-align: center;
+      margin-bottom: 10px;
+    }
 
-        <div className="grid md:grid-cols-2 gap-8">
-          <div className="bg-gradient-to-br from-amber-50 to-yellow-100 border-4 border-amber-800 rounded-lg shadow-2xl overflow-hidden">
-            <div className="bg-amber-100 border-b-4 border-amber-800 py-6">
-              <h2 className="text-4xl font-bold text-center text-gray-900">TODAY'S GOLD RATE</h2>
-            </div>
+    .logo img {
+      width: 120px;
+    }
 
-            <div className="divide-y-4 divide-amber-800">
-              <div className="grid grid-cols-2 divide-x-4 divide-amber-800">
-                <div className="bg-amber-50 py-8 px-6">
-                  <p className="text-5xl font-bold text-center text-gray-900">24CT</p>
-                </div>
-                <div className="bg-yellow-50 py-8 px-6 flex items-center justify-center">
-                  <input
-                    type="text"
-                    className="w-full text-4xl font-semibold text-center bg-transparent border-none outline-none text-gray-800"
-                    placeholder="0.00"
-                  />
-                </div>
-              </div>
+    .logo h1 {
+      font-size: 36px;
+      color: #d32f2f;
+      margin: 5px 0;
+    }
 
-              <div className="grid grid-cols-2 divide-x-4 divide-amber-800">
-                <div className="bg-amber-50 py-8 px-6">
-                  <p className="text-5xl font-bold text-center text-gray-900">22CT</p>
-                </div>
-                <div className="bg-yellow-50 py-8 px-6 flex items-center justify-center">
-                  <input
-                    type="text"
-                    className="w-full text-4xl font-semibold text-center bg-transparent border-none outline-none text-gray-800"
-                    placeholder="0.00"
-                  />
-                </div>
-              </div>
+    .logo h2 {
+      font-size: 20px;
+      color: #000;
+      margin: 0;
+    }
 
-              <div className="grid grid-cols-2 divide-x-4 divide-amber-800">
-                <div className="bg-amber-50 py-8 px-6">
-                  <p className="text-5xl font-bold text-center text-gray-900">18CT</p>
-                </div>
-                <div className="bg-yellow-50 py-8 px-6 flex items-center justify-center">
-                  <input
-                    type="text"
-                    className="w-full text-4xl font-semibold text-center bg-transparent border-none outline-none text-gray-800"
-                    placeholder="0.00"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
+    .date-label {
+      font-size: 22px;
+      font-weight: bold;
+      background-color: #000;
+      color: #fff;
+      display: inline-block;
+      padding: 10px 30px;
+      margin: 20px 0;
+    }
 
-          <div className="bg-gradient-to-br from-amber-50 to-yellow-100 border-4 border-amber-800 rounded-lg shadow-2xl overflow-hidden">
-            <div className="bg-amber-100 border-b-4 border-amber-800 py-6">
-              <h2 className="text-4xl font-bold text-center text-gray-900" style={{ direction: 'rtl' }}>سعر الذهب</h2>
-            </div>
+    .gold-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
 
-            <div className="divide-y-4 divide-amber-800">
-              <div className="grid grid-cols-2 divide-x-4 divide-amber-800" style={{ direction: 'rtl' }}>
-                <div className="bg-amber-50 py-8 px-6">
-                  <p className="text-5xl font-bold text-center text-gray-900">٢٤ عيار</p>
-                </div>
-                <div className="bg-yellow-50 py-8 px-6 flex items-center justify-center">
-                  <input
-                    type="text"
-                    className="w-full text-4xl font-semibold text-center bg-transparent border-none outline-none text-gray-800"
-                    placeholder="0.00"
-                    style={{ direction: 'ltr' }}
-                  />
-                </div>
-              </div>
+    .gold-table th, .gold-table td {
+      border: 2px solid #000;
+      padding: 15px;
+      font-size: 18px;
+    }
 
-              <div className="grid grid-cols-2 divide-x-4 divide-amber-800" style={{ direction: 'rtl' }}>
-                <div className="bg-amber-50 py-8 px-6">
-                  <p className="text-5xl font-bold text-center text-gray-900">٢٢ عيار</p>
-                </div>
-                <div className="bg-yellow-50 py-8 px-6 flex items-center justify-center">
-                  <input
-                    type="text"
-                    className="w-full text-4xl font-semibold text-center bg-transparent border-none outline-none text-gray-800"
-                    placeholder="0.00"
-                    style={{ direction: 'ltr' }}
-                  />
-                </div>
-              </div>
+    .gold-table th {
+      background-color: #f0e68c;
+      font-weight: bold;
+    }
 
-              <div className="grid grid-cols-2 divide-x-4 divide-amber-800" style={{ direction: 'rtl' }}>
-                <div className="bg-amber-50 py-8 px-6">
-                  <p className="text-5xl font-bold text-center text-gray-900">١٨ عيار</p>
-                </div>
-                <div className="bg-yellow-50 py-8 px-6 flex items-center justify-center">
-                  <input
-                    type="text"
-                    className="w-full text-4xl font-semibold text-center bg-transparent border-none outline-none text-gray-800"
-                    placeholder="0.00"
-                    style={{ direction: 'ltr' }}
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+    .ltr {
+      direction: ltr;
+    }
+
+    .rtl {
+      direction: rtl;
+      font-family: 'Arial', sans-serif;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="logo">
+      <img src="logo.png" alt="Fareeda Logo"> <!-- Replace with actual logo -->
+      <h1>FAREEDA</h1>
+      <h2>JEWELLERY</h2>
     </div>
-}
-      
-  </body>
+
+    <div class="date-label">DATE: <span id="todayDate"></span></div>
+
+    <table class="gold-table">
+      <tr>
+        <th class="ltr">TODAY'S GOLD RATE</th>
+        <th class="rtl">سعر الذهب</th>
+      </tr>
+      <tr>
+        <td class="ltr">24CT</td>
+        <td class="rtl">عيار ٢٤</td>
+      </tr>
+      <tr>
+        <td class="ltr">22CT</td>
+        <td class="rtl">عيار ٢٢</td>
+      </tr>
+      <tr>
+        <td class="ltr">18CT</td>
+        <td class="rtl">عيار ١٨</td>
+      </tr>
+    </table>
+  </div>
+
+  <script>
+    // Auto-fill today's date
+    const dateElement = document.getElementById("todayDate");
+    const today = new Date();
+    const options = { year: 'numeric', month: 'long', day: 'numeric' };
+    dateElement.textContent = today.toLocaleDateString('en-US', options);
+  </script>
+
+</body>
 </html>
