@@ -13,6 +13,25 @@
       text-align: center;
     }
 
+    .container1 {
+      display: flex;
+      justify-content: space-between; /* Puts tables on left and right */
+      padding: 20px;
+    }
+
+    .gold table {
+      border: 1px solid black;
+      border-collapse: collapse;
+      width: 45%; /* Adjust width as needed */
+    }
+
+    .gold th, .gold td {
+      border: 1px solid black;
+      padding: 8px;
+      text-align: center;
+    }
+
+    
     .container {
       background-color: rgba(255, 255, 255, 0.85);
       width: 80%;
@@ -94,6 +113,25 @@
     <div class="date-label">DATE: <span id="todayDate"></span></div>
     <h2>TODAY'S GOLD RATE</h2>
     <h1> سعر الذهب  </h1>
+
+    <div class="container1">
+    <!-- Left Table -->
+    <table>
+      <tr><th>Left Table</th></tr>
+      <tr><td>Item 1</td></tr>
+      <tr><td>Item 2</td></tr>
+    </table>
+
+    <!-- Right Table -->
+    <table>
+      <tr><th>Right Table</th></tr>
+      <tr><td>Data A</td></tr>
+      <tr><td>Data B</td></tr>
+    </table>
+  </div>
+
+
+    
     <table class="gold-table">
      <tr>
         <td class="ltr">24CT</td>
