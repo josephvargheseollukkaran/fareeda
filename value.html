@@ -1,30 +1,53 @@
-<form id="form">
-  <input name="header" placeholder="Header text">
-  <input name="banner" placeholder="Banner text">
-  <input name="sidebar" placeholder="Sidebar text">
-  <input name="footer" placeholder="Footer text">
-  <input name="section5" placeholder="Section 5 text">
-  <input name="section6" placeholder="Section 6 text">
-  <button type="submit">Submit</button>
-</form>
-<script src="https://www.gstatic.com/firebasejs/YOUR_VERSION/firebase-auth.js"></script>
-<script src="https://www.gstatic.com/firebasejs/YOUR_VERSION/firebase-database.js"></script>
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Enter 6 values — download txt</title>
+  <style>
+    body { font-family: system-ui; max-width:600px; margin:40px auto; }
+    label { display:block; margin-top:10px; }
+    input { width:100%; padding:8px; box-sizing:border-box; }
+    button { margin-top:12px; padding:8px 12px; }
+  </style>
+</head>
+<body>
+  <h1>Enter 6 values</h1>
+  <form id="form" onsubmit="event.preventDefault(); downloadFile();">
+    <label>Value 1<input id="v1" required></label>
+    <label>Value 2<input id="v2" required></label>
+    <label>Value 3<input id="v3" required></label>
+    <label>Value 4<input id="v4" required></label>
+    <label>Value 5<input id="v5" required></label>
+    <label>Value 6<input id="v6" required></label>
+    <button type="submit">Download text file</button>
+  </form>
 
-<script>
-src="https://www.gstatic.com/firebasejs/YOUR_VERSION/firebase-app.js">
-   const firebaseConfig = {
-    apiKey: "YOUR_API_KEY",
-    authDomain: "fareeda-5c983.firebaseapp.com",
-    projectId: "fareeda-5c983",
-document.querySelector('#form').addEventListener('submit', async (e) => {
-  e.preventDefault();
-  const data = Object.fromEntries(new FormData(e.target).entries());
-  await fetch('https://fareeda-5c983-default-rtdb.firebaseio.com/', {
-    firebase.initializeApp(firebaseConfig);
-  });
-  alert('Data updated!');
-});
-</script>
+  <script>
+    function downloadFile() {
+      const vals = [];
+      for (let i = 1; i <= 6; i++) {
+        vals.push(document.getElementById('v' + i).value.trim());
+      }
+      if (vals.some(v => v === "")) {
+        alert("Please fill all six values.");
+        return;
+      }
+      // prepare content — tab separated + timestamp
+      const ts = new Date().toISOString();
+      const content = ts + "\\t" + vals.map(v => v.replace(/\\t/g, " ")).join("\\t") + "\\n";
 
-
-
+      const blob = new Blob([content], { type: "text/plain;charset=utf-8" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      // filename with timestamp
+      const safeTs = ts.replace(/[:.]/g, '-');
+      a.download = `values_${safeTs}.txt`;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      URL.revokeObjectURL(url);
+    }
+  </script>
+</body>
+</html>
