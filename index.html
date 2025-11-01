@@ -94,12 +94,23 @@
 
     .ltr {
       direction: ltr;
+      animation: blinker 1s linear infinite;
+    color: blue;
+    font-size: 24px;
+    font-family: sans-serif;
     }
 
     .rtl {
       direction: rtl;
       font-family: 'Arial', sans-serif;
     }
+   
+
+  @keyframes blinker {
+    50% {
+      opacity: 0;
+    }
+  }
   </style>
 </head>
 <body>
