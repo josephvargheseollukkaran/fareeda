@@ -7,16 +7,24 @@
   <input name="section6" placeholder="Section 6 text">
   <button type="submit">Submit</button>
 </form>
+<script src="https://www.gstatic.com/firebasejs/YOUR_VERSION/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/YOUR_VERSION/firebase-database.js"></script>
 
 <script>
+src="https://www.gstatic.com/firebasejs/YOUR_VERSION/firebase-app.js">
+   const firebaseConfig = {
+    apiKey: "YOUR_API_KEY",
+    authDomain: "fareeda-5c983.firebaseapp.com",
+    projectId: "fareeda-5c983",
 document.querySelector('#form').addEventListener('submit', async (e) => {
   e.preventDefault();
   const data = Object.fromEntries(new FormData(e.target).entries());
-  await fetch('https://websiteB.com/api/update', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(data)
+  await fetch('https://fareeda-5c983-default-rtdb.firebaseio.com/', {
+    firebase.initializeApp(firebaseConfig);
   });
   alert('Data updated!');
 });
 </script>
+
+
+
