@@ -1,0 +1,22 @@
+<form id="form">
+  <input name="header" placeholder="Header text">
+  <input name="banner" placeholder="Banner text">
+  <input name="sidebar" placeholder="Sidebar text">
+  <input name="footer" placeholder="Footer text">
+  <input name="section5" placeholder="Section 5 text">
+  <input name="section6" placeholder="Section 6 text">
+  <button type="submit">Submit</button>
+</form>
+
+<script>
+document.querySelector('#form').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const data = Object.fromEntries(new FormData(e.target).entries());
+  await fetch('https://websiteB.com/api/update', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data)
+  });
+  alert('Data updated!');
+});
+</script>

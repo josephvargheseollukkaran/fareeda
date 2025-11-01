@@ -1,0 +1,13 @@
+<div id="header"></div>
+<div id="footer"></div>
+
+<script>
+async function loadContent() {
+  const res = await fetch("/api/content");
+  const data = await res.json();
+  document.getElementById("header").textContent = data.header;
+  document.getElementById("footer").textContent = data.footer;
+}
+loadContent();
+setInterval(loadContent, 5000); // auto-refresh every 5s
+</script>
