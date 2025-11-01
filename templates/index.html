@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Enter 6 Values</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 40px auto; max-width: 500px; }
+    input { width: 100%; padding: 8px; margin: 5px 0; }
+    button { padding: 10px 15px; margin-top: 10px; }
+    .msg { margin-top: 15px; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <h1>Enter 6 Values</h1>
+  <form method="post">
+    <input type="text" name="value1" placeholder="Value 1" required>
+    <input type="text" name="value2" placeholder="Value 2" required>
+    <input type="text" name="value3" placeholder="Value 3" required>
+    <input type="text" name="value4" placeholder="Value 4" required>
+    <input type="text" name="value5" placeholder="Value 5" required>
+    <input type="text" name="value6" placeholder="Value 6" required>
+    <button type="submit">Save</button>
+  </form>
+
+  {% if message %}
+  <div class="msg">{{ message }}</div>
+  {% endif %}
+</body>
+</html>
